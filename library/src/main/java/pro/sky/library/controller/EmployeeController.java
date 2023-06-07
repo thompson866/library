@@ -22,21 +22,27 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    public Employee add(@RequestParam("firstName") String firstName,
-                        @RequestParam("lastName") String lastName) {
-        return employeeService.addEmployee(firstName, lastName);
+    public Employee add( String firstName,
+                         String lastName,
+                         int department,
+                         int salary) {
+        return employeeService.addEmployee(firstName, lastName,department, salary);
     }
 
     @GetMapping("/remove")
-    public Employee remove(@RequestParam("firstName") String firstName,
-                           @RequestParam("lastName") String lastName) {
-        return employeeService.removeEmployee(firstName, lastName);
+    public Employee remove(String firstName,
+                           String lastName,
+                           int department,
+                           int salary)  {
+        return employeeService.removeEmployee(firstName, lastName, department,salary);
     }
 
     @GetMapping("/find")
-    public Employee find(@RequestParam("firstName") String firstName,
-                         @RequestParam("lastName") String lastName) {
-        return employeeService.findEmployee(firstName, lastName);
+    public Employee find(String firstName,
+                         String lastName,
+                         int department,
+                         int salary)  {
+        return employeeService.findEmployee(firstName, lastName, department, salary);
     }
 //    @GetMapping()
 //    public List<Employee>list(){
