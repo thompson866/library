@@ -32,12 +32,10 @@ public class DepartmentController {
             @RequestParam("departmentId") int department) {
         return departmentService.findEmployeeWithMinSalaryFromDepartment(department);
     }
-
     @GetMapping(value = "/all", params = "departmentId")
     public List<Employee> findEmployeesFromDepartment(@RequestParam("departmentId") int department) {
         return departmentService.findAllEmployeesFromDepartment(department);
     }
-
     @GetMapping("/all")
     public Map<Integer, List<Employee>> findEmployees() {
         return departmentService.findEmployeesByDepartment();
